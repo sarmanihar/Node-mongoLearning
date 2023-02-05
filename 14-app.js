@@ -3,6 +3,12 @@ const server = http.createServer((req, res) => {
     if (req.url === '/') {
         res.end('Welcome to our home page')
     } else if (req.url === '/about') {
+        //Blocking Code!!!
+        for (let i = 0; i < 1000; i++) {
+            for (let j = 0; j < 1000; j++) {
+                console.log(`${i} ${j}`)
+            }
+        }
         res.end('Here is our short history')
     } else {
         res.end(`
@@ -11,8 +17,9 @@ const server = http.createServer((req, res) => {
         <a href="/">back home</a>
         `)
     }
-    /*console.log(req);
-    res.write('welcome to our homw page')
-    res.end();*/
+
+
 })
-server.listen(5003)
+server.listen(5003, () => {
+    console.log('server is listening on port 5003');
+})
