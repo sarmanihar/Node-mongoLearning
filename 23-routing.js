@@ -1,6 +1,13 @@
 const { products, people } = require('./data');
 const express = require('express');
 const app = express();
+/*  VVI */
+//query syntax and parameter(eg:ID) syntex diiferent
+
+
+
+
+
 
 app.get /*this get shows get request*/ ('/', (req, res) => {
 
